@@ -7,18 +7,20 @@ Natours is a tour booking platform that allows users to explore and book various
 ## Features
 
 ### Tours Management
-- **Get All Tours**: Retrieve a list of all available tours.
-- **Get One Tour**: View detailed information about a specific tour.
-- **Create New Tour**: Add a new tour to the platform (restricted to `admin` and `lead-guide` roles).
-- **Update Tour**: Modify existing tour details (restricted to `admin` and `lead-guide` roles).
-- **Delete Tour**: Remove a tour from the platform (restricted to `admin` and `lead-guide` roles).
+- Retrieve a list of all available tours.
+- View detailed information about a specific tour.
+- Add a new tour to the platform (restricted to `admin` and `lead-guide` roles).
+- Modify existing tour details (restricted to `admin` and `lead-guide` roles).
+- Remove a tour from the platform (restricted to `admin` and `lead-guide` roles).
 
 ### Users Management
-- **Get All Users**: Retrieve a list of all registered users (restricted access).
-- **Authentication**: Users are authenticated via JSON Web Tokens (JWT) for secure access.
+- Retrieve a list of all registered users (restricted access).
+- Users are authenticated via JSON Web Tokens (JWT) for secure access.
+- Users can reset their passwords.
+- Users can update their personal details.
 
 ### Reviews Management
-- **Write Reviews**: Users can submit reviews for tours they have experienced.
+- Users can submit reviews for tours they have experienced.
 
 ---
 
@@ -27,24 +29,15 @@ Natours is a tour booking platform that allows users to explore and book various
 - **JWT Authentication**: Each request is authenticated using a JWT token to ensure secure access to API endpoints.
 - **Role-based Access Control (RBAC)**:
   - Only users with `admin` or `lead-guide` roles can manage tours (create, update, delete).
-  - Access to certain user-related endpoints is restricted based on roles.
+  - Access to certain user-related features is restricted based on roles.
 
 ---
 
-## API Endpoints
+## Technology Stack
 
-### Tours Controller
-1. **GET /tours**: Fetch all tours.
-2. **GET /tours/:id**: Fetch details of a specific tour by its ID.
-3. **POST /tours**: Create a new tour (restricted to `admin` and `lead-guide`).
-4. **PATCH /tours/:id**: Update an existing tour (restricted to `admin` and `lead-guide`).
-5. **DELETE /tours/:id**: Delete a tour (restricted to `admin` and `lead-guide`).
-
-### Users Controller
-1. **GET /users**: Fetch all users (restricted to authorized roles).
-
-### Reviews Controller
-1. **POST /reviews**: Allow users to write reviews for tours.
+- **Node.js**: Backend JavaScript runtime environment.
+- **Express.js**: Web application framework for building RESTful APIs.
+- **MongoDB**: NoSQL database for efficient data storage and retrieval.
 
 ---
 
@@ -73,6 +66,28 @@ Natours is a tour booking platform that allows users to explore and book various
 
 ---
 
+## Presentation Notes
+
+Natours is designed to be:
+
+1. **User-Friendly**:
+   - Intuitive interface for users to browse and book tours.
+   - Seamless user experience for password resets and profile updates.
+
+2. **Secure**:
+   - Utilizes JWT for robust authentication.
+   - Implements role-based access control to ensure proper permissions.
+
+3. **Scalable**:
+   - Built with Node.js and Express.js for high performance.
+   - MongoDB allows for scalable and flexible data storage.
+
+4. **Maintainable**:
+   - Organized codebase with a RESTful API structure.
+   - Clear separation of concerns for different features (e.g., tours, users, reviews).
+
+---
+
 ## Contributing
 
 If you'd like to contribute to Natours, please fork the repository and submit a pull request. For major changes, please open an issue to discuss your ideas first.
@@ -84,7 +99,3 @@ If you'd like to contribute to Natours, please fork the repository and submit a 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
-
-## Acknowledgments
-
-- Special thanks to the contributors and the open-source community for their support.
